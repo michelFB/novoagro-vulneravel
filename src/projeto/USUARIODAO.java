@@ -14,7 +14,7 @@ public class USUARIODAO {
 	//construtor ------------------------------------------------------------------------------
 	public USUARIODAO() {
 	// abre uma conexão com o banco de dados
-	this.connection = new BANCO().getConnection();}	
+	this.connection = new ConexãoBancoDados().getConnection();}	
 	
 		
 	// método de logar no banco ------------------------------------------------------------

@@ -13,7 +13,7 @@ public class PRODUTODAO {
 	//construtor ------------------------------------------------------------------------------
 	public PRODUTODAO() {
 	// abre uma conexão com o banco de dados
-	this.connection = new BANCO().getConnection();}	
+	this.connection = new ConexãoBancoDados().getConnection();}	
 	
 		
 
