@@ -1,11 +1,10 @@
 package projeto;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConexãoBancoDados {
+public class ConexaoBD {
 	private Connection con = null;
 	private String hostName = null;
 	private String userName = null;
@@ -15,7 +14,7 @@ public class ConexãoBancoDados {
 	private String dataBaseName = null;
 	private String dataBasePrefix = null;
 
-	public ConexãoBancoDados() {
+	public ConexaoBD() {
 		jdbcDriver = "org.firebirdsql.jdbc.FBDriver";
 		dataBasePrefix = "jdbc:firebirdsql";
 		dataBaseName = "login-vulneravel";

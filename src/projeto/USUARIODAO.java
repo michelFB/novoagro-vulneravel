@@ -13,18 +13,18 @@ public class USUARIODAO {
 	
 	//construtor ------------------------------------------------------------------------------
 	public USUARIODAO() {
-	// abre uma conexão com o banco de dados
-	this.connection = new ConexãoBancoDados().getConnection();}	
+	// abre uma conexï¿½o com o banco de dados
+	this.connection = new ConexaoBD().getConnection();}	
 	
 		
-	// método de logar no banco ------------------------------------------------------------
+	// mï¿½todo de logar no banco ------------------------------------------------------------
 	public boolean Loga(USUARIOMODEL Usuario) {	
 		boolean variavel = false;
 		try {
 			String sql = "select * from USUARIO where LOGIN='" + Usuario.getLogin() +"'and SENHA='" + Usuario.getSenha() + "';";
 			PreparedStatement st = connection.prepareStatement(sql);
 			ResultSet rs = st.executeQuery();
-		if(rs.next()){ System.out.println("Usuário conectado!");
+		if(rs.next()){ System.out.println("Usuï¿½rio conectado!");
 	        variavel = true;
 		      } else { System.out.println("Nenhum usuario!");
 	            variavel = false;}
@@ -59,7 +59,7 @@ public class USUARIODAO {
 			return UsuarioObj;
 		}
 	
-		// método de adicionar ao banco ------------------------------------------------------------
+		// mï¿½todo de adicionar ao banco ------------------------------------------------------------
 		public void adiciona(USUARIOMODEL Usuario) {	
 			try {			
 			
@@ -74,7 +74,7 @@ public class USUARIODAO {
 				} catch (SQLException e) {
 			throw new RuntimeException(e);	}
 			}
-	//Exclusão por registro-----------------------------------------------------------------------------------------------------
+	//Exclusï¿½o por registro-----------------------------------------------------------------------------------------------------
 	public boolean apaga(USUARIOMODEL usuario) {
 		boolean retorno = false;
 		try {
@@ -88,7 +88,7 @@ public class USUARIODAO {
 	return retorno;
 	}
 	
-	//Alteração -----------------------------------------------------------------------------------------------------
+	//Alteraï¿½ï¿½o -----------------------------------------------------------------------------------------------------
 	public boolean altera(USUARIOMODEL usuario) {
 		boolean retorno = false;
 		try {
@@ -119,7 +119,7 @@ public class USUARIODAO {
 				UsuarioObj.setLogin(rs.getString("LOGIN"));		
 				UsuarioObj.setSenha(rs.getString("SENHA"));
 				UsuarioObj.setTipo(rs.getString("TIPO"));
-				this.UsuarioLista.add(UsuarioObj);	// adicionando o objeto à lista
+				this.UsuarioLista.add(UsuarioObj);	// adicionando o objeto ï¿½ lista
 				}
 			rs.close();
 			st.close();

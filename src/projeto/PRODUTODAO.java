@@ -12,12 +12,12 @@ public class PRODUTODAO {
 	
 	//construtor ------------------------------------------------------------------------------
 	public PRODUTODAO() {
-	// abre uma conexão com o banco de dados
-	this.connection = new ConexãoBancoDados().getConnection();}	
+	// abre uma conexï¿½o com o banco de dados
+	this.connection = new ConexaoBD().getConnection();}	
 	
 		
 
-		// método de adicionar ao banco ------------------------------------------------------------
+		// mï¿½todo de adicionar ao banco ------------------------------------------------------------
 	public void adiciona(PRODUTOMODEL Produto) {	
 	try {
 	String sql = "EXECUTE PROCEDURE GRAVAR_PRODUTO(?,?,?,?,?)";		
@@ -34,7 +34,7 @@ public class PRODUTODAO {
 	throw new RuntimeException(e);	}
 	}
 
-	//Exclusão por registro-----------------------------------------------------------------------------------------------------
+	//Exclusï¿½o por registro-----------------------------------------------------------------------------------------------------
 	public boolean apaga(PRODUTOMODEL Produto) {
 		boolean retorno = false;
 		try {
@@ -48,7 +48,7 @@ public class PRODUTODAO {
 	return retorno;
 	}
 	
-	//Alteração -----------------------------------------------------------------------------------------------------
+	//Alteraï¿½ï¿½o -----------------------------------------------------------------------------------------------------
 	public boolean altera(PRODUTOMODEL produto) {
 
 		boolean retorno = false;
@@ -82,7 +82,7 @@ public class PRODUTODAO {
 				ProdutoObj.setQuantidade(rs.getString("QUANTIDADE"));
 				ProdutoObj.setValor(rs.getString("VALOR"));
 				ProdutoObj.setImagem(rs.getString("IMAGEM"));
-				this.ProdutoLista.add(ProdutoObj);					// adicionando o objeto à lista
+				this.ProdutoLista.add(ProdutoObj);					// adicionando o objeto ï¿½ lista
 				}
 			rs.close();
 			stmt.close();
